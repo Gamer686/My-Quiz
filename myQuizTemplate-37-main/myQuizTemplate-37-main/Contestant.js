@@ -16,16 +16,17 @@ class Contestant{
         });
       }
 update(){
-  var contestantIndex ="contestants/contestants"=this.index
+  var contestantIndex ="contestants/contestants"+this.index
   database.ref(contestantIndex).set({
   name:this.name,
   answer:this.answer
    })
  }
 static getPlayerInfo(){
-    var contestantInfoRef = database.ref('contestant');
+    var contestantInfoRef = database.ref('contestants');
     contestantInfoRef.on("value",(data)=>{
         allContestants = data.val();
+        console.log(allContestants)
     })
 }
 }

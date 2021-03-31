@@ -44,7 +44,7 @@ class Question{
         this.input2.hide();
         contestant.name = this.input1.value();
         contestant.answer = this.input2.value();
-        ParticipantsCount =+1
+        ParticipantsCount +=1
         contestant.index = ParticipantsCount;
         contestant.update();
         contestant.updateCount(ParticipantsCount);

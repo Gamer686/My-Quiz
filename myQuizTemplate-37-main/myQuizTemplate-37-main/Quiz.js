@@ -14,11 +14,11 @@ getState(){
    async start(){
        if(gameState===0){
            contestant = new Contestant();
-           var contestantCountRef = await database.ref('ParticipantsCount').on("value");
-           if(contestantCountRef.exists()){
-            ParticipantsCount = contestantCountRef.val();
-            constestant.getCount();
-           }
+         //  var contestantCountRef = await database.ref('ParticipantsCount').on("value");
+           //if(contestantCountRef.exists()){
+           // ParticipantsCount = contestantCountRef.val();
+            contestant.getCount();
+           //}
            question =new Question()
            question.display();
        }
@@ -39,6 +39,8 @@ getState(){
            text("NOTE:Contestant who answered correct are highlighted in Pink color!",130,230);
 
            for(var plr in allContestants){
+               console.log(plr+ ','+ allContestants);
+               
                debugger;
                var correctAns = "2";
                if(correctAns === allContestants[plr].answer)
